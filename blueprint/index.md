@@ -221,7 +221,7 @@ This solution requires a Campaign for each scheduled presence change your busine
 
 16. Save Call Rule set
 
-![saveCallRulesetForAvailable](images/saveCallRuleset1.png "Save Call Ruleset For Available")
+![saveCallRulesetForAvailable](images/saveCallRuleSet1.png "Save Call Ruleset For Available")
 
 17. Navigate to **Admin** > **Outbound** > **Call Rule Sets** and click **Create New**.  
 
