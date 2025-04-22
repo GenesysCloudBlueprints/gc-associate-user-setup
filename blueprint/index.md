@@ -3,10 +3,10 @@ title: Setup a Genesys Cloud Associate User
 author: jason.wolfgang
 indextype: blueprint
 icon: blueprint
-image: images/MobileUserReceivesACDCall.gif
+image: images/gc-associate-user-call-workflow.png
 category: 6
 summary: |
-  This Genesys Cloud Developer Blueprint explains how to set up Genesys Cloud to terminate an outbound voice call with no queue and place an external tag on the call for analytics and follow-up.
+  This Genesys Cloud Developer Blueprint explains how to set up a Genesys Cloud Associate User.  Specifically, to optimize the experience for a Genesys Cloud user receiving ACD (automatic call distribution) Voice Interactions on a mobile device.
 ---
 
 This Genesys Cloud Developer Blueprint explains how to set up a Genesys Cloud Associate User.  Specifically, to optimize the experience for a Genesys Cloud user receiving ACD (automatic call distribution) Voice Interactions on a mobile device.
