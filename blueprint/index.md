@@ -298,44 +298,6 @@ Direct Routing users and traditional Agent users receiving ACD voice interaction
 
 ![configureQueues](images/configureQueues.png "Configure Queues")
 
-## Set Mobile User Notifications to Always
-For a GC user to receive an ACD voice interaction or a Direct Routing interaction, their presence status must be in an "Available" or "On Queue" state.  To receive a call via a Genesys Cloud mobile application while in a non-offline presence state, a GC user's mobile notifications must be set to "Always Notify"  Be sure to set your GC user's setting according to your business rules.
-
-1. Navigate to [Genesys Cloud API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Opens the GC API Explorer") in the Genesys Cloud Developer Center.
-
-2. Authenticate with your desired GC Account
-
-3.  Using the [GET /api/v2/chats/{userId}/settings](https://developer.genesys.cloud/devapps/api-explorer#get-api-v2-chats-users--userId--settings) endpoint, check the existing value of your mobile users.
-
-:::primary
-  **Note:** You will need the **chat:usersettings:view** permission.
-  :::
-
-![getChatsUserSetting1](images/getChatsUserSetting1.png "Get Chats User Setting")
-
-![getChatsUserSetting2](images/getChatsUserSetting2.png "Get Chats User Setting")
-
-4.  If the GC user's settings is not set to **Always**, use the [PATCH /api/v2/chats/{userId}/settings](https://developer.genesys.cloud/devapps/api-explorer#patch-api-v2-chats-users--userId--settings) endpoint, to update the setting to Always using the JSON body below.
-
-:::primary
-  **Note:** You will need the **chat:usersettings:edit** permission.
-  :::
-
-```
-{
-  "mobile": {
-    "notifications": {
-      "when": "Always"
-    }
-  }
-}
-```
-
-![patchChatsUserSetting1](images/patchChatsUserSetting1.png "Patch Chats User Setting")
-
-![patchChatsUserSetting2](images/patchChatsUserSetting2.png "Patch Chats User Setting")
-
-![patchChatsUserSetting3](images/patchChatsUserSetting3.png "Patch Chats User Setting")
 
 ## Additional resources
 
