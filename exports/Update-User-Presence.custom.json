@@ -1,0 +1,45 @@
+{
+  "name": "Update User Presence",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/users/${input.userId}/presences/purecloud",
+      "requestType": "PATCH",
+      "headers": {},
+      "requestTemplate": "{\n  \"userId\": \"${input.userId}\",\n  \"status\": \"${input.presenceId}\",\n  \"startTime\": \"${input.presenceName}\"\n}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    },
+    "timeoutSeconds": 60
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "UserIdRequest",
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "presenceId": {
+            "type": "string"
+          },
+          "presenceName": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "secure": false
+}
