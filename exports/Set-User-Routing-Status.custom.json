@@ -1,0 +1,45 @@
+{
+  "name": "Set User Routing Status",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/users/${input.userId}/routingstatus",
+      "requestType": "PUT",
+      "headers": {},
+      "requestTemplate": "{\n  \"userId\": \"${input.userId}\",\n  \"status\": \"${input.status}\",\n  \"startTime\": \"${input.startTime}\"\n}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    },
+    "timeoutSeconds": 60
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "userIdRequest",
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "secure": false
+}
